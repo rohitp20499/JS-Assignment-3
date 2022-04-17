@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+  <style>
+    table,
+    tr,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+  <script>
+    function onloading() {
+      document.getElementById("demo").innerHTML = shtml;
+    }
+    // const set = new Set();
+    const states = new Map([
+      ['Andhra Pradesh', {
+        capital: 'Amaravathi',
+        income: 3500000
+      }],
+      ['karnataka', {
+        capital: 'bangalore',
+        income: 43500000
+      }],
+      ['Hydarabad', {
+        capital: 'Telangana',
+        income: 78000000
+      }],
+      ['Kerala', {
+        capital: 'Trivendrum',
+        income: 21200000
+      }],
+      ['Maharastra', {
+      capital: 'mumbai',
+      income: 56400000
+    }]
+    ]);
+    let shtml = "<table>";
+    states.forEach((value, key) => {
+      shtml += `<tr><td rowspan= "2"> ${key} </td><td>  ${value.capital} </td></tr><tr><td>  ${value.income} </td></tr>`
+    });
+    shtml += `</table>`;
+  </script>
+</head>
+
+<body onload="onloading()">
+  <p id="demo">CHECK CONSOLE FOR RESULT</p>
+</body>
+
+</html>
